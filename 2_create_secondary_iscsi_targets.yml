@@ -51,3 +51,21 @@
     - name: Debug the result variable
       ansible.builtin.debug:
         var: result
+
+####################################################################
+# Task 7 : Attach ldevs to iscsi target
+####################################################################
+    - name: Attach ldevs to iscsi target
+      hitachivantara.vspone_block.vsp.hv_iscsi_target:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "attach_ldev"
+          name: "iscsi-target-server-1"
+          port: "CL4-C"
+          ldevs: [300, 400]
+      register: result
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result
