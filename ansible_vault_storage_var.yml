@@ -1,6 +1,5 @@
 # User will use Ansible Vault to encrypt this file.
 # Ansible will decrypt this file when it executes the playbook.
-onprem_storage_serial: 810396
 storage_serial: 810396
 storage_address: 192.168.180.12
 storage_controller_ip: 192.168.180.13

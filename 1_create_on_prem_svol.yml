@@ -27,12 +27,9 @@
         spec:
           ldev_id: "{{ svol_ldev_id }}"
           pool_id: "{{ svol_pool_id }}"
-          size: "{{ svol_size }}
+          size: "{{ svol_size }}"
       register: result
 
     - name: Debug the result variable
       ansible.builtin.debug:
         var: result
-
-
-    
