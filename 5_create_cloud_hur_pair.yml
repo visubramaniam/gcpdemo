@@ -140,7 +140,7 @@
 
 
     - name: Create cloud HUR PAIR
-      ansible.builtin.shell: "/HORCM/usr/bin/paircreate -g TCDEMO -f async 10 -jp 10 -js 10 -vl -I100"
+      ansible.builtin.shell: "/HORCM/usr/bin/paircreate -g TCDEMO -f async 10 -jp 10 -js 10 -vr -I100"
       register: ret
       failed_when: >
         (ret.stderr != '') or
@@ -153,7 +153,7 @@
         (ret.stderr != '') or
         (ret.rc != 0)
 
-    - name: Wait for the pair creation to completet HUR PAIR 
+    - name: Split HUR PAIR 
       ansible.builtin.shell: "/HORCM/usr/bin/pairsplit -g TCDEMO -rw -I100"
       register: ret
       failed_when: >
