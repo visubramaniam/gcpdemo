@@ -1,16 +1,12 @@
 # User will use Ansible Vault to encrypt this file.
 # Ansible will decrypt this file when it executes the playbook.
-primary_storage_serial: 810396
+onprem_storage_serial: 810396
 storage_serial: 810396
 storage_address: 192.168.180.12
 storage_controller_ip: 192.168.180.13
 vault_storage_username: ansible
 vault_storage_secret: Remote01
-secondary_storage_serial: 840012
-secondary_storage_address: 192.168.181.12
-vault_secondary_storage_username: ansible
-vault_secondary_storage_secret: Remote01
-cloud_storage_serial: 228743
-cloud_storage_address: 172.17.1.28
+cloud_storage_serial: 240517
+cloud_storage_address: 172.19.1.205
 cloud_vault_storage_username: admin
-cloud_vault_storage_secret: Hitachi123!
+cloud_vault_storage_secret: St0r@g3@DP!
