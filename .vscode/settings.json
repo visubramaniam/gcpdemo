@@ -1,5 +1,5 @@
 {
-    "ansible.python.interpreterPath": "/opt/homebrew/bin/python3",
+    "ansible.python.interpreterPath": "/opt/homebrew/bin/python3.12",
     "ansible.ansible.path": "/opt/homebrew/bin/ansible",
     "ansible.ansibleNavigator.path": "/opt/homebrew/bin/ansible-navigator",
     "ansible.validation.lint.path": "/opt/homebrew/bin/ansible-lint",
@@ -8,7 +8,53 @@
     "ansible.executionEnvironment.pull.arguments": "--tls-verify=false",
     "ansible.executionEnvironment.pull.policy": "always",
     "ansible.lightspeed.enabled": false,
-    "ansible.collectionsPaths": [
-           "/Users/vinodsubramaniam/.ansible/collections"
-       ]
+    "ansible.validation.enabled": true,
+    "ansible.validation.lint.enabled": true,
+    "ansible.validation.lint.arguments": "--nocolor --parseable --exclude .vscode --exclude .git --exclude .tox --exclude .venv",
+    "ansible.validation.lint.configFile": ".ansible-lint",
+}   
+{
+    "ansible.validation.lint.rules": [
+        "no-changed-when",
+        "no-duplicate-blocks",
+        "no-empty-task",
+        "no-host-key-checking",
+        "no-jinja-undefined-variable",
+        "no-localhost",
+        "no-missing-collection-metadata",
+        "no-missing-required-attributes",
+        "no-role-name-in-path",
+        "no-template-in-conditional",
+        "no-trailing-whitespace"
+    ]
+}
+{
+    "ansible.validation.lint.rulesets": [
+        "community.general",
+        "ansible.builtin"
+    ]
+}
+{
+    "ansible.validation.lint.rulesetsPath": "/opt/homebrew/lib/python3.12/site-packages/ansible_lint/rulesets",
+    "ansible.validation.lint.rulesPath": "/opt/homebrew/lib/python3.12/site-packages/ansible_lint/rules",
+    "ansible.validation.lint.skipList": [
+        "no-changed-when",
+        "no-duplicate-blocks",
+        "no-empty-task",
+        "no-host-key-checking",
+        "no-jinja-undefined-variable",
+        "no-localhost",
+        "no-missing-collection-metadata",
+        "no-missing-required-attributes",
+        "no-role-name-in-path",
+        "no-template-in-conditional",
+        "no-trailing-whitespace"
+    ]
+}
+{
+    "ansible.validation.lint.skipListPath": "/opt/homebrew/lib/python3.12/site-packages/ansible_lint/skip_list",
+    "ansible.validation.lint.skipListFile": ".ansible-lint.skip",
+    "ansible.validation.lint.skipListEnabled": true,
+    "ansible.validation.lint.skipListFileEnabled": true,
+    "ansible.validation.lint.skipListFilePath": "/opt/homebrew/lib/python3.12/site-packages/ansible_lint/skip_list/.ansible-lint.skip"
 }
