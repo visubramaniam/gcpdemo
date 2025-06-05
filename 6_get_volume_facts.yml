@@ -5,6 +5,12 @@
   hosts: localhost
   vars_files:
     - ansible_vault_storage_var.yml
+  vars:
+    # Common connection info for all tasks
+    connection_info:
+      address: "{{ cloud_storage_address }}"
+      username: "{{ cloud_vault_storage_username }}"
+      password: "{{ cloud_vault_storage_secret}}"
   tasks:
     - name: Get Volume Facts
       hitachivantara.vspone_block.sds_block.hv_sds_block_volume_facts:
