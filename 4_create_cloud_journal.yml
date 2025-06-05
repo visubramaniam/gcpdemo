@@ -6,7 +6,27 @@
   hosts: localhost
   vars_files:
     - ansible_vault_storage_var.yml
+  vars:
+    # Common connection info for all tasks
+    connection_info:
+      address: "{{ cloud_storage_address }}"
+      username: "{{ cloud_vault_storage_username }}"
+      password: "{{ cloud_vault_storage_secret}}"
+
   tasks:
+    - name: Get Volume Facts
+      hitachivantara.vspone_block.sds_block.hv_sds_block_volume_facts:
+        connection_info: "{{ connection_info }}"
+        spec:
+          names: ["mysql-hur-gcp-pvol"]
+      register: result
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result
+    - name: Set Storage Controller ID for workflow
+      set_fact:
+          storage_controller_id: "{{ result.volumes[0].storage_controller_id }}"
     - name: Check if journal volume creation file exists
       ansible.builtin.stat:
         path: /tmp/journal_volume_created
