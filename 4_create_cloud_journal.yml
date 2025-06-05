@@ -26,7 +26,7 @@
         var: result
     - name: Set Storage Controller ID for workflow
       set_fact:
-          storage_controller_id: "{{ result.volumes[0].storage_controller_id }}"
+          storage_controller_id: "{{ result.ansible_facts.volumes[0].storage_controller_id }}"
     - name: Check if journal volume creation file exists
       ansible.builtin.stat:
         path: /tmp/journal_volume_created
