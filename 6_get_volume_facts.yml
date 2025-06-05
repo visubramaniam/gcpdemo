@@ -1,0 +1,18 @@
+####################################################################
+# Get PVOL Controller ID
+####################################################################
+- name: Create Cloud HUR Journal
+  hosts: localhost
+  vars_files:
+    - ansible_vault_storage_var.yml
+  tasks:
+    - name: Get Volume Facts
+      hitachivantara.vspone_block.sds_block.hv_sds_block_volume_facts:
+        connection_info: "{{ connection_info }}"
+        spec:
+          names: ["mysql-hur-gcp-pvol"]
+      register: result
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result
