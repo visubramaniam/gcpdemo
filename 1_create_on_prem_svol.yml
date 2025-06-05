@@ -7,7 +7,7 @@
   gather_facts: false
 
   vars_files:
-    - ../ansible_vault_vars/ansible_vault_storage_var.yml
+    - ansible_vault_storage_var.yml
 
   vars:
     # Common connection info for all tasks
