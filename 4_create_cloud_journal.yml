@@ -42,7 +42,7 @@
           --password "{{ cloud_vault_storage_secret }}" \
           volume_create \
           --base_name_for_name "{{ cloud_journal_name }}" \
-          --storage_controller_id "{{ storage_controller_id }}" \
+          --storage_controller_id "{{ result.ansible_facts.volumes[0].storage_controller_id }}" \
           --capacity 102400 \
           --pool_id_name "{{ cloud_pool_name }}" | \
           grep -i "^Job" | tr -d " " | cut -d":" -f2 | tr -d "\n"
