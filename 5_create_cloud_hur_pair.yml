@@ -140,7 +140,7 @@
 
 
     - name: Create cloud HUR PAIR
-      ansible.builtin.shell: "/HORCM/usr/bin/paircreate -g TCDEMO -f async 10 -jp 10 -js 10 -vr -I100"
+      ansible.builtin.shell: /HORCM/usr/bin/paircreate -g TCDEMO -f async "{{ ctg_id }}}" -jp "{{ onprem_journal_id }}"" -js "{{ cloud_journal_number }}" -vr -I100
       register: ret
       failed_when: >
         (ret.stderr != '') or
