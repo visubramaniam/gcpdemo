@@ -7,5 +7,5 @@ vault_storage_username: ansible
 vault_storage_secret: Remote01
 cloud_storage_serial: 240517
 cloud_storage_address: 172.19.1.205
-cloud_vault_storage_username: admin
-cloud_vault_storage_secret: St0r@g3@DP!
+cloud_vault_storage_username: ansible
+cloud_vault_storage_secret: Passw0rd123
